@@ -9,6 +9,7 @@ import { ApolloProvider } from "react-apollo";
 
 // Component imports
 import Post from "./src/Post/Post";
+import Posts from "./src/Posts/Posts";
 
 const client = new ApolloClient({
 	uri: "https://api.graph.cool/simple/v1/cjybv96jy2msk014182vlh1z0"
@@ -22,7 +23,7 @@ const App = ({ navigation }) => {
 	return (
 		<ApolloProvider client={client}>
 			<View style={styles.container}>
-				<Text>Welcome to your home screen</Text>
+				<Posts />
 				<Button onPress={goToPost} title="Go to Post page" />
 			</View>
 		</ApolloProvider>

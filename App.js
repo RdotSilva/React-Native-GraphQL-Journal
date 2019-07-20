@@ -2,6 +2,9 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { createStackNavigator, createAppContainer } from "react-navigation";
 
+// Component imports
+import Post from "./src/Post/Post";
+
 const App = () => {
 	return (
 		<View style={styles.container}>
@@ -37,8 +40,12 @@ const styles = StyleSheet.create({
 });
 
 const AppNavigator = createStackNavigator({
+	// First page to load because it comes first in order
 	Home: {
 		screen: App
+	},
+	Post: {
+		screen: Post
 	}
 });
 

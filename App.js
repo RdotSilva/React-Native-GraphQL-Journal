@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 import { createStackNavigator, createAppContainer } from "react-navigation";
+import navStyles from "./assets/stylesheets/navStyles";
 
 // Component imports
 import Post from "./src/Post/Post";
@@ -21,18 +22,7 @@ const App = ({ navigation }) => {
 // Nav header options
 App.navigationOptions = {
 	title: "Home",
-	headerStyle: {
-		backgroundColor: "#373142"
-	},
-	headerTintColor: "#fff",
-	headerTitleStyle: {
-		alignSelf: "center",
-		textAlign: "center",
-		justifyContent: "center",
-		flex: 1,
-		fontWeight: "bold",
-		color: "#fff"
-	}
+	...navStyles
 };
 
 const styles = StyleSheet.create({

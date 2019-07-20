@@ -20,10 +20,12 @@ const App = ({ navigation }) => {
 	};
 
 	return (
-		<View style={styles.container}>
-			<Text>Welcome to your home screen</Text>
-			<Button onPress={goToPost} title="Go to Post page" />
-		</View>
+		<ApolloProvider client={client}>
+			<View style={styles.container}>
+				<Text>Welcome to your home screen</Text>
+				<Button onPress={goToPost} title="Go to Post page" />
+			</View>
+		</ApolloProvider>
 	);
 };
 

@@ -12,7 +12,19 @@ const App = () => {
 
 // Nav header options
 App.navigationOptions = {
-	title: "Home"
+	title: "Home",
+	headerStyle: {
+		backgroundColor: "#373142"
+	},
+	headerTintColor: "#fff",
+	headerTitleStyle: {
+		alignSelf: "center",
+		textAlign: "center",
+		justifyContent: "center",
+		flex: 1,
+		fontWeight: "bold",
+		color: "#fff"
+	}
 };
 
 const styles = StyleSheet.create({

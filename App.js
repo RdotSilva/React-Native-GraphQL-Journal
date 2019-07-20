@@ -1,14 +1,19 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Button } from "react-native";
 import { createStackNavigator, createAppContainer } from "react-navigation";
 
 // Component imports
 import Post from "./src/Post/Post";
 
-const App = () => {
+const App = ({ navigation }) => {
+	const goToPost = () => {
+		navigation.navigate("Post");
+	};
+
 	return (
 		<View style={styles.container}>
 			<Text>Welcome to your home screen</Text>
+			<Button onPress={goToPost} title="Go to Post page" />
 		</View>
 	);
 };

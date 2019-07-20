@@ -10,6 +10,11 @@ const App = () => {
 	);
 };
 
+// Nav header options
+App.navigationOptions = {
+	title: "Home"
+};
+
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,

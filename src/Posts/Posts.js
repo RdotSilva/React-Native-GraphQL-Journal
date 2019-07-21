@@ -3,8 +3,8 @@ import { View, Text } from "react-native";
 import { compose, graphql } from "react-apollo";
 import { gql } from "apollo-boost";
 
-const Posts = ({ data }) => {
-	console.log(data);
+const Posts = props => {
+	console.log(props);
 	return (
 		<View>
 			<Text />
@@ -21,4 +21,6 @@ const postsQuery = gql`
 	}
 `;
 
-export default graphql(postsQuery)(Posts);
+export default graphql(postsQuery, {
+	props: ({ data }) => ({ ...data })
+})(Posts);

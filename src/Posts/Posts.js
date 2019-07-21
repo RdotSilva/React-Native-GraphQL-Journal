@@ -7,8 +7,12 @@ const Posts = ({ loading, allPosts }) => {
 	if (loading) return null;
 	return (
 		<View>
-      <FlatList data={allPosts}
-      
+			<FlatList
+				data={allPosts}
+				renderItem={({ item }) => {
+					<Text>{item.title}</Text>;
+				}}
+			/>
 		</View>
 	);
 };

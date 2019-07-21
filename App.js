@@ -15,15 +15,15 @@ const client = new ApolloClient({
 	uri: "https://api.graph.cool/simple/v1/cjybv96jy2msk014182vlh1z0"
 });
 
-const App = ({ navigation }) => {
+const App = props => {
 	const goToPost = () => {
-		navigation.navigate("Post");
+		props.navigation.navigate("Post");
 	};
 
 	return (
 		<ApolloProvider client={client}>
 			<View style={styles.container}>
-				<Posts />
+				<Posts {...props} />
 			</View>
 		</ApolloProvider>
 	);

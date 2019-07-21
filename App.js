@@ -24,7 +24,6 @@ const App = ({ navigation }) => {
 		<ApolloProvider client={client}>
 			<View style={styles.container}>
 				<Posts />
-				<Button onPress={goToPost} title="Go to Post page" />
 			</View>
 		</ApolloProvider>
 	);

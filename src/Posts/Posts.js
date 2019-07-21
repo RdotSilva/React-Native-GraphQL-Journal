@@ -12,6 +12,7 @@ const Posts = ({ loading, allPosts }) => {
 				renderItem={({ item }) => {
 					<Text>{item.title}</Text>;
 				}}
+				keyExtractor={item => item.id}
 			/>
 		</View>
 	);

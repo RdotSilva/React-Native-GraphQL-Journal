@@ -13,7 +13,7 @@ const Posts = ({ navigation }) => (
 						data={allPosts}
 						renderItem={({ item }) => (
 							<Text
-								onPress={(() => navigation.navigate("Post"), { id: item.id })}
+								onPress={() => navigation.navigate("Post", { id: item.id })}
 							>
 								{item.title}
 							</Text>

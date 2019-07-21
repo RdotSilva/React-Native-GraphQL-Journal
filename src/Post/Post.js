@@ -2,10 +2,11 @@ import React from "react";
 import { View, Text } from "react-native";
 import navStyles from "../../assets/stylesheets/navStyles";
 
-const Post = () => {
+const Post = props => {
+	console.log(props);
 	return (
 		<View>
-			<Text>New Page!</Text>
+			<Text>{props.navigation.state.params.id}</Text>
 		</View>
 	);
 };

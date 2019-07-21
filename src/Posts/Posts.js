@@ -9,9 +9,7 @@ const Posts = ({ loading, allPosts }) => {
 		<View>
 			<FlatList
 				data={allPosts}
-				renderItem={({ item }) => {
-					<Text>{item.title}</Text>;
-				}}
+				renderItem={({ item }) => <Text>{item.title}</Text>}
 				keyExtractor={item => item.id}
 			/>
 		</View>

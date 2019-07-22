@@ -15,14 +15,14 @@ const Home = props => {
 		props.navigation.navigate("Post");
 	};
 
-	const newPost = props => {
+	const newPost = () => {
 		props.navigation.navigate("NewPost");
 	};
 
 	return (
 		<View style={styles.container}>
 			<Posts {...props} />
-			<TouchableHighlight style={styles.newPost}>
+			<TouchableHighlight onPress={newPost} style={styles.newPost}>
 				<Text style={styles.newPostText}>New Post +</Text>
 			</TouchableHighlight>
 		</View>

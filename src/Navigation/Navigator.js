@@ -18,7 +18,7 @@ const Home = props => {
 		<View style={styles.container}>
 			<Posts {...props} />
 			<TouchableHighlight style={styles.newPost}>
-				<Text>New Post +</Text>
+				<Text style={styles.newPostText}>New Post +</Text>
 			</TouchableHighlight>
 		</View>
 	);
@@ -38,6 +38,10 @@ const styles = StyleSheet.create({
 	newPost: {
 		backgroundColor: "#82D8D8",
 		padding: 20
+	},
+	newPostText: {
+		fontSize: 20,
+		textAlign: "center"
 	}
 });
 

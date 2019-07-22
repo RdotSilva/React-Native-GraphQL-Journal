@@ -1,6 +1,6 @@
 import React from "react";
 import { createStackNavigator, createAppContainer } from "react-navigation";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Text, TouchableHighlight } from "react-native";
 
 import navStyles from "../../assets/stylesheets/navStyles";
 
@@ -17,6 +17,9 @@ const Home = props => {
 	return (
 		<View style={styles.container}>
 			<Posts {...props} />
+			<TouchableHighlight>
+				<Text>New Post</Text>
+			</TouchableHighlight>
 		</View>
 	);
 };

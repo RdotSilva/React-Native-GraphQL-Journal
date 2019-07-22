@@ -17,7 +17,7 @@ const Home = props => {
 	return (
 		<View style={styles.container}>
 			<Posts {...props} />
-			<TouchableHighlight>
+			<TouchableHighlight style={styles.newPost}>
 				<Text>New Post +</Text>
 			</TouchableHighlight>
 		</View>
@@ -34,6 +34,10 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		justifyContent: "space-between"
+	},
+	newPost: {
+		backgroundColor: "#82D8D8",
+		padding: 20
 	}
 });
 

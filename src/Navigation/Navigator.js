@@ -6,6 +6,7 @@ import navStyles from "../../assets/stylesheets/navStyles";
 
 // Component imports
 import Post from "../Post/Post";
+import NewPost from "../Post/NewPost";
 import Posts from "../Posts/Posts";
 import App from "../../App";
 
@@ -52,6 +53,9 @@ const AppNavigator = createStackNavigator({
 	},
 	Post: {
 		screen: Post
+	},
+	NewPost: {
+		screen: NewPost
 	}
 });
 

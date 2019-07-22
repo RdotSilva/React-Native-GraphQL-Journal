@@ -6,10 +6,12 @@ import { compose, graphql, Query } from "react-apollo";
 import { gql } from "apollo-boost";
 
 const Post = props => {
-	console.log(props);
+	const { Post, loading } = props;
+	if (loading) return null;
 	return (
 		<View>
-			<Text>{props.Post.id}</Text>
+			<Text>{Post.id}</Text>
+			<Text>{Post.title}</Text>
 		</View>
 	);
 };

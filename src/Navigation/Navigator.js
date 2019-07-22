@@ -18,7 +18,7 @@ const Home = props => {
 		<View style={styles.container}>
 			<Posts {...props} />
 			<TouchableHighlight>
-				<Text>New Post</Text>
+				<Text>New Post +</Text>
 			</TouchableHighlight>
 		</View>
 	);
@@ -31,7 +31,10 @@ Home.navigationOptions = {
 };
 
 const styles = StyleSheet.create({
-	container: {}
+	container: {
+		flex: 1,
+		justifyContent: "space-between"
+	}
 });
 
 const AppNavigator = createStackNavigator({

@@ -15,6 +15,10 @@ const Home = props => {
 		props.navigation.navigate("Post");
 	};
 
+	const newPost = props => {
+		props.navigation.navigate("NewPost");
+	};
+
 	return (
 		<View style={styles.container}>
 			<Posts {...props} />

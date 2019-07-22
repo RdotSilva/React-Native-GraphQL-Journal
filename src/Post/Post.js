@@ -9,7 +9,7 @@ const Post = props => {
 	console.log(props);
 	return (
 		<View>
-			<Text>{props.navigation.state.params.id}</Text>
+			<Text>{props.Post.id}</Text>
 		</View>
 	);
 };

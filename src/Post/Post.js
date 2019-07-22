@@ -20,6 +20,15 @@ Post.navigationOptions = {
 	...navStyles
 };
 
+const postQuery = gql`
+	query Post($id: ID!) {
+		Post(id: $id) {
+			id
+			title
+		}
+	}
+`;
+
 export default graphql(postQuery, {
 	props: ({ data }) => ({ ...data }),
 	options: ({ navigation }) => ({

@@ -8,7 +8,6 @@ import navStyles from "../../assets/stylesheets/navStyles";
 import Post from "../Post/Post";
 import NewPost from "../Post/NewPost";
 import Posts from "../Posts/Posts";
-import App from "../../App";
 
 const Home = props => {
 	const goToPost = () => {

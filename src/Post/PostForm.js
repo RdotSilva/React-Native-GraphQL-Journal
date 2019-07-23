@@ -6,6 +6,7 @@ const PostForm = () => {
 		<View>
 			<TextInput ref={input => (title = input)} />
 			<TextInput ref={input => (body = input)} />
+			<Button title="Save Post" onPress={submitForm} />
 		</View>
 	);
 };

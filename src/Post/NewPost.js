@@ -6,23 +6,19 @@ import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
 
 const NewPost = props => {
-	newPost = ({ title, body }) => {
-		console.log(title, body);
-	};
-
 	return (
-		<Mutation mutation={makeNewPost}>
+		<Mutation mutation={NEWPOST}>
 			{(createPost, { data }) => (
 				<View>
-					<PostForm onSubmit={newPost} />
+					<PostForm />
 				</View>
 			)}
 		</Mutation>
 	);
 };
 
-const makeNewPost = gql`
-	mutation makeNewPost($title: String!, $body: String!) {
+const NEWPOST = gql`
+	mutation NewPost($title: String!, $body: String!) {
 		createPost(title: $title, body: $body) {
 			id
 		}

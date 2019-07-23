@@ -11,15 +11,23 @@ const PostForm = props => {
 
 	submitForm = () => {
 		props.onSubmit({
-			title: title,
-			body: body
+			title,
+			body
 		});
 	};
 
 	return (
 		<View>
-			<TextInput onChangeText={title => setFormData({ title })} value={title} />
-			<TextInput onChangeText={body => setFormData({ body })} value={body} />
+			<TextInput
+				onChangeText={title => setFormData({ ...formData, title })}
+				value={title}
+				placeholder="Title"
+			/>
+			<TextInput
+				onChangeText={body => setFormData({ ...formData, body })}
+				value={body}
+				placeholder="Body"
+			/>
 			<Button title="Save Post" onPress={submitForm} />
 		</View>
 	);

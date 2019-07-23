@@ -11,14 +11,18 @@ const NewPost = props => {
 	};
 
 	return (
-		<View>
-			<PostForm onSubmit={newPost} />
-		</View>
+		<Mutation mutation={makeNewPost}>
+			{(createPost, { data }) => (
+				<View>
+					<PostForm onSubmit={newPost} />
+				</View>
+			)}
+		</Mutation>
 	);
 };
 
-const newPost = gql`
-	mutation newPost($title: String!, $body: String!) {
+const makeNewPost = gql`
+	mutation makeNewPost($title: String!, $body: String!) {
 		createPost(title: $title, body: $body) {
 			id
 		}

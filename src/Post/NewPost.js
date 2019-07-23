@@ -10,7 +10,15 @@ const NewPost = props => {
 		<Mutation mutation={NEWPOST}>
 			{(createPost, { data }) => (
 				<View>
-					<PostForm />
+					<PostForm
+						onSubmit={({ title, body }) => {
+							createPost({
+								variables: { title, body }
+							})
+								.then(res => res)
+								.catch(err => console.log(err));
+						}}
+					/>
 				</View>
 			)}
 		</Mutation>

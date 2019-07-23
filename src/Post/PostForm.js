@@ -25,6 +25,7 @@ const PostForm = props => {
 				placeholder="Title"
 			/>
 			<TextInput
+				style={styles.body}
 				onChangeText={body => setFormData({ ...formData, body })}
 				value={body}
 				placeholder="Body"
@@ -39,6 +40,12 @@ const styles = StyleSheet.create({
 		height: 40,
 		borderColor: "#333",
 		borderWidth: 1
+	},
+	body: {
+		height: 400,
+		borderColor: "#333",
+		borderWidth: 1,
+		textAlignVertical: "top"
 	}
 });
 

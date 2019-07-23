@@ -1,11 +1,11 @@
 import React from "react";
 import { View, Text, TextInput, Button } from "react-native";
 
-const PostForm = () => {
+const PostForm = props => {
 	submitForm = () => {
 		props.onSubmit({
-			title,
-			body
+			title: title.value,
+			body: body.value
 		});
 	};
 

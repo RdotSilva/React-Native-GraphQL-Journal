@@ -1,10 +1,10 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, TextInput, Button } from "react-native";
 
 const PostForm = () => {
 	return (
 		<View>
-			<Text />
+			<TextInput ref={input => (title = input)} />
 		</View>
 	);
 };

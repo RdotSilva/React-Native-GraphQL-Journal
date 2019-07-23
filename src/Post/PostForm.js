@@ -1,5 +1,5 @@
 import React, { useState, setState } from "react";
-import { View, Text, TextInput, Button } from "react-native";
+import { View, Text, TextInput, Button, StyleSheet } from "react-native";
 
 const PostForm = props => {
 	const [formData, setFormData] = useState({
@@ -19,6 +19,7 @@ const PostForm = props => {
 	return (
 		<View>
 			<TextInput
+				style={styles.title}
 				onChangeText={title => setFormData({ ...formData, title })}
 				value={title}
 				placeholder="Title"
@@ -32,5 +33,13 @@ const PostForm = props => {
 		</View>
 	);
 };
+
+const styles = StyleSheet.create({
+	title: {
+		height: 40,
+		borderColor: "#333",
+		borderWidth: 1
+	}
+});
 
 export default PostForm;

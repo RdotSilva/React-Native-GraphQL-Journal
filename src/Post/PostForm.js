@@ -5,6 +5,7 @@ const PostForm = () => {
 	return (
 		<View>
 			<TextInput ref={input => (title = input)} />
+			<TextInput ref={input => (body = input)} />
 		</View>
 	);
 };

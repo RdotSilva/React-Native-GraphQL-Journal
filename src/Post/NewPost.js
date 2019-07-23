@@ -2,8 +2,10 @@ import React from "react";
 import { View, Text } from "react-native";
 import PostForm from "./PostForm";
 
-const NewPost = () => {
-	newPost = () => {};
+const NewPost = props => {
+	newPost = ({ title, body }) => {
+		console.log(title, body);
+	};
 
 	return (
 		<View>

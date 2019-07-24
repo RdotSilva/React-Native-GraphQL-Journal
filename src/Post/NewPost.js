@@ -1,5 +1,5 @@
-import React from "react";
-import { View, Text } from "react-native";
+import React, { useState } from "react";
+import { View, Text, ActivityIndicator } from "react-native";
 import PostForm from "./PostForm";
 
 import gql from "graphql-tag";
@@ -9,6 +9,8 @@ import { Mutation } from "react-apollo";
 import { useMutation } from "@apollo/react-hooks";
 
 const NewPost = props => {
+	const [loading, setLoading] = useState(false);
+
 	const [createPost] = useMutation(NEW_POST, {
 		variables: { title: title, body: body }
 	});
@@ -16,12 +18,24 @@ const NewPost = props => {
 	const { navigation, title, body } = props;
 
 	const newPost = ({ title, body }) => {
-		createPost({ variables: { title, body } }).then(navigation.goBack());
+		setLoading(true);
+		createPost({ variables: { title, body } })
+			.then(() => {
+				navigation.goBack();
+			})
+			.catch(error => {
+				setLoading(false);
+				console.log(error);
+			});
 	};
 
 	return (
 		<View>
-			<PostForm onSubmit={newPost} />
+			{loading ? (
+				<ActivityIndicator size="large" />
+			) : (
+				<PostForm onSubmit={newPost} />
+			)}
 		</View>
 	);
 };

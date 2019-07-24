@@ -5,29 +5,50 @@ import PostForm from "./PostForm";
 import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
 
-const NewPost = props => (
-	<Mutation mutation={NEWPOST}>
-		{(createPost, { data }) => {
-			const { navigation } = props;
+// Apollo hooks
+import { useMutation } from "@apollo/react-hooks";
 
-			const newPost = ({ title, body }) => {
-				createPost({
-					variables: { title, body }
-				}).then(() => {
-					navigation.goBack();
-				});
-			};
+const NewPost = props => {
+	const [createPost] = useMutation(NEW_POST, {
+		variables: { title: title, body: body }
+	});
 
-			return (
-				<View>
-					<PostForm onSubmit={newPost} />
-				</View>
-			);
-		}}
-	</Mutation>
-);
+	const { navigation, title, body } = props;
 
-const NEWPOST = gql`
+	const newPost = ({ title, body }) => {
+		createPost({ variables: { title, body } }).then(navigation.goBack());
+	};
+
+	return (
+		<View>
+			<PostForm onSubmit={newPost} />
+		</View>
+	);
+};
+
+// const NewPost = props => (
+// 	<Mutation mutation={NEWPOST}>
+// 		{(createPost, { data }) => {
+// 			const { navigation } = props;
+
+// 			const newPost = ({ title, body }) => {
+// 				createPost({
+// 					variables: { title, body }
+// 				}).then(() => {
+// 					navigation.goBack();
+// 				});
+// 			};
+
+// 			return (
+// 				<View>
+// 					<PostForm onSubmit={newPost} />
+// 				</View>
+// 			);
+// 		}}
+// 	</Mutation>
+// );
+
+const NEW_POST = gql`
 	mutation NewPost($title: String!, $body: String!) {
 		createPost(title: $title, body: $body) {
 			id

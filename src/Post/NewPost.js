@@ -5,25 +5,23 @@ import PostForm from "./PostForm";
 import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
 
-const NewPost = props => {
-	return (
-		<Mutation mutation={NEWPOST}>
-			{(createPost, { data }) => (
+const NewPost = props => (
+	<Mutation mutation={NEWPOST}>
+		{(createPost, { data }) => {
+			const newPost = ({ title, body }) => {
+				createPost({
+					variables: { title, body }
+				});
+			};
+
+			return (
 				<View>
-					<PostForm
-						onSubmit={({ title, body }) => {
-							createPost({
-								variables: { title, body }
-							})
-								.then(res => res)
-								.catch(err => console.log(err));
-						}}
-					/>
+					<PostForm onSubmit={newPost} />
 				</View>
-			)}
-		</Mutation>
-	);
-};
+			);
+		}}
+	</Mutation>
+);
 
 const NEWPOST = gql`
 	mutation NewPost($title: String!, $body: String!) {

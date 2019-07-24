@@ -3,30 +3,54 @@ import { View, Text, FlatList } from "react-native";
 import { compose, graphql, Query } from "react-apollo";
 import { gql } from "apollo-boost";
 
-const Posts = ({ navigation }) => (
-	<Query query={postsQuery}>
-		{({ loading, data: { allPosts } }) => {
-			if (loading) return <Text>Loading...</Text>;
-			return (
-				<View>
-					<FlatList
-						data={allPosts}
-						renderItem={({ item }) => (
-							<Text
-								onPress={() => navigation.navigate("Post", { id: item.id })}
-							>
-								{item.title}
-							</Text>
-						)}
-						keyExtractor={item => item.id}
-					/>
-				</View>
-			);
-		}}
-	</Query>
-);
+// Apollo hooks
+import { useQuery } from "@apollo/react-hooks";
 
-const postsQuery = gql`
+const Posts = ({ navigation }) => {
+	const { loading, data } = useQuery(POSTS_QUERY);
+	const { allPosts } = data;
+
+	if (loading) return <Text>Loading...</Text>;
+
+	return (
+		<View>
+			<FlatList
+				data={allPosts}
+				renderItem={({ item }) => (
+					<Text onPress={() => navigation.navigate("Post", { id: item.id })}>
+						{item.title}
+					</Text>
+				)}
+				keyExtractor={item => item.id}
+			/>
+		</View>
+	);
+};
+
+// const Posts = ({ navigation }) => (
+// 	<Query query={postsQuery}>
+// 		{({ loading, data: { allPosts } }) => {
+// 			if (loading) return <Text>Loading...</Text>;
+// return (
+// 	<View>
+// 		<FlatList
+// 			data={allPosts}
+// 			renderItem={({ item }) => (
+// 				<Text
+// 					onPress={() => navigation.navigate("Post", { id: item.id })}
+// 				>
+// 					{item.title}
+// 				</Text>
+// 			)}
+// 			keyExtractor={item => item.id}
+// 		/>
+// 	</View>
+// );
+// 		}}
+// 	</Query>
+// );
+
+const POSTS_QUERY = gql`
 	{
 		allPosts {
 			id

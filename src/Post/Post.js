@@ -39,9 +39,11 @@ const Post = props => {
 // );
 
 // Nav header options
-Post.navigationOptions = {
-	title: "Post",
-	...navStyles
+Post.navigationOptions = ({ navigation }) => {
+	return {
+		title: "Post",
+		...navStyles
+	};
 };
 
 const postQuery = gql`

@@ -17,7 +17,11 @@ const Posts = ({ navigation }) => {
 			<FlatList
 				data={allPosts}
 				renderItem={({ item }) => (
-					<Text onPress={() => navigation.navigate("Post", { id: item.id })}>
+					<Text
+						onPress={() =>
+							navigation.navigate("Post", { id: item.id, title: item.title })
+						}
+					>
 						{item.title}
 					</Text>
 				)}

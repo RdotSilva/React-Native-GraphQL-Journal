@@ -12,7 +12,7 @@ const Post = props => {
 	const { loading, data } = useQuery(postQuery, {
 		variables: { id: props.navigation.state.params.id }
 	});
-	const { Post } = props;
+	const { Post } = data;
 
 	if (loading) return <Text>Loading...</Text>;
 

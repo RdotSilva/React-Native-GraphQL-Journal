@@ -51,7 +51,7 @@ const Posts = ({ navigation }) => {
 // );
 
 const POSTS_QUERY = gql`
-	{
+	query postsQuery {
 		allPosts {
 			id
 			title

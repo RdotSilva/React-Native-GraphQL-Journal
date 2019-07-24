@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, FlatList } from "react-native";
+import { View, Text, FlatList, ActivityIndicator } from "react-native";
 import { compose, graphql, Query } from "react-apollo";
 import { gql } from "apollo-boost";
 
@@ -10,7 +10,7 @@ const Posts = ({ navigation }) => {
 	const { loading, data } = useQuery(POSTS_QUERY);
 	const { allPosts } = data;
 
-	if (loading) return <Text>Loading...</Text>;
+	if (loading) return <ActivityIndicator size="large" />;
 
 	return (
 		<View>

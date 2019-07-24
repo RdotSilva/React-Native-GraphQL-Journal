@@ -41,7 +41,7 @@ const Post = props => {
 // Nav header options
 Post.navigationOptions = ({ navigation }) => {
 	return {
-		title: "Post",
+		title: navigation.state.params.title,
 		...navStyles
 	};
 };

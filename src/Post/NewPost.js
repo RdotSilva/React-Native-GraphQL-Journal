@@ -12,7 +12,8 @@ const NewPost = props => {
 	const [loading, setLoading] = useState(false);
 
 	const [createPost] = useMutation(NEW_POST, {
-		variables: { title: title, body: body }
+		variables: { title: title, body: body },
+		refetchQueries: ["postsQuery"]
 	});
 
 	const { navigation, title, body } = props;

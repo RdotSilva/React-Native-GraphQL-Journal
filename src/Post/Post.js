@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, ActivityIndicator } from "react-native";
 import navStyles from "../../assets/stylesheets/navStyles";
 
 import { compose, graphql, Query } from "react-apollo";
@@ -14,7 +14,7 @@ const Post = props => {
 	});
 	const { Post } = data;
 
-	if (loading) return <Text>Loading...</Text>;
+	if (loading) return <ActivityIndicator size="large" />;
 
 	return (
 		<View>

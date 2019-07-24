@@ -5,20 +5,39 @@ import navStyles from "../../assets/stylesheets/navStyles";
 import { compose, graphql, Query } from "react-apollo";
 import { gql } from "apollo-boost";
 
-const Post = props => (
-	<Query query={postQuery} variables={{ id: props.navigation.state.params.id }}>
-		{({ loading, error, data }) => {
-			const { Post } = data;
-			if (loading) return <Text>Loading...</Text>;
-			return (
-				<View>
-					<Text>{Post.title}</Text>
-					<Text>{Post.id}</Text>
-				</View>
-			);
-		}}
-	</Query>
-);
+// Apollo hooks
+import { useQuery } from "@apollo/react-hooks";
+
+const Post = props => {
+	const { loading, data } = useQuery(postQuery, {
+		variables: { id: props.navigation.state.params.id }
+	});
+	const { Post } = props;
+
+	if (loading) return <Text>Loading...</Text>;
+
+	return (
+		<View>
+			<Text>{Post.title}</Text>
+			<Text>{Post.id}</Text>
+		</View>
+	);
+};
+
+// const Post = props => (
+// 	<Query query={postQuery} variables={{ id: props.navigation.state.params.id }}>
+// 		{({ loading, error, data }) => {
+// 			const { Post } = data;
+// 			if (loading) return <Text>Loading...</Text>;
+// 			return (
+// 				<View>
+// 					<Text>{Post.title}</Text>
+// 					<Text>{Post.id}</Text>
+// 				</View>
+// 			);
+// 		}}
+// 	</Query>
+// );
 
 // Nav header options
 Post.navigationOptions = {

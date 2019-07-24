@@ -8,9 +8,13 @@ import { Mutation } from "react-apollo";
 const NewPost = props => (
 	<Mutation mutation={NEWPOST}>
 		{(createPost, { data }) => {
+			const { navigation } = props;
+
 			const newPost = ({ title, body }) => {
 				createPost({
 					variables: { title, body }
+				}).then(() => {
+					navigation.goBack();
 				});
 			};
 

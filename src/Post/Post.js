@@ -18,8 +18,7 @@ const Post = props => {
 
 	return (
 		<View>
-			<Text>{Post.title}</Text>
-			<Text>{Post.id}</Text>
+			<Text>{Post.body}</Text>
 		</View>
 	);
 };
@@ -50,6 +49,7 @@ const postQuery = gql`
 		Post(id: $id) {
 			id
 			title
+			body
 		}
 	}
 `;

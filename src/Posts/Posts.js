@@ -3,6 +3,9 @@ import { View, Text, FlatList, ActivityIndicator } from "react-native";
 import { compose, graphql, Query } from "react-apollo";
 import { gql } from "apollo-boost";
 
+// Native Base
+import { List, ListItem } from "native-base";
+
 // Apollo hooks
 import { useQuery } from "@apollo/react-hooks";
 
@@ -14,19 +17,21 @@ const Posts = ({ navigation }) => {
 
 	return (
 		<View>
-			<FlatList
-				data={allPosts}
-				renderItem={({ item }) => (
-					<Text
-						onPress={() =>
-							navigation.navigate("Post", { id: item.id, title: item.title })
-						}
-					>
-						{item.title}
-					</Text>
-				)}
-				keyExtractor={item => item.id}
-			/>
+			<List>
+				<FlatList
+					data={allPosts}
+					renderItem={({ item }) => (
+						<ListItem
+							onPress={() =>
+								navigation.navigate("Post", { id: item.id, title: item.title })
+							}
+						>
+							<Text>{item.title}</Text>
+						</ListItem>
+					)}
+					keyExtractor={item => item.id}
+				/>
+			</List>
 		</View>
 	);
 };

@@ -4,7 +4,7 @@ import { compose, graphql, Query } from "react-apollo";
 import { gql } from "apollo-boost";
 
 // Native Base
-import { List, ListItem } from "native-base";
+import { List, ListItem, Body, Right, Icon } from "native-base";
 
 // Apollo hooks
 import { useQuery } from "@apollo/react-hooks";
@@ -26,7 +26,12 @@ const Posts = ({ navigation }) => {
 								navigation.navigate("Post", { id: item.id, title: item.title })
 							}
 						>
-							<Text>{item.title}</Text>
+							<Body>
+								<Text>{item.title}</Text>
+							</Body>
+							<Right>
+								<Icon name="arrow-forward" />
+							</Right>
 						</ListItem>
 					)}
 					keyExtractor={item => item.id}

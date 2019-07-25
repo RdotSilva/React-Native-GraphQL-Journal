@@ -4,6 +4,9 @@ import { StyleSheet, View, Text, TouchableHighlight } from "react-native";
 
 import navStyles from "../../assets/stylesheets/navStyles";
 
+// Native Base
+import { Fab, Icon } from "native-base";
+
 // Component imports
 import Post from "../Post/Post";
 import NewPost from "../Post/NewPost";
@@ -21,6 +24,9 @@ const Home = props => {
 	return (
 		<View style={styles.container}>
 			<Posts {...props} />
+			<Fab onPress={newPost} style={styles.newPost}>
+				<Icon name="add" />
+			</Fab>
 			<TouchableHighlight onPress={newPost} style={styles.newPost}>
 				<Text style={styles.newPostText}>New Post +</Text>
 			</TouchableHighlight>
@@ -40,8 +46,7 @@ const styles = StyleSheet.create({
 		justifyContent: "space-between"
 	},
 	newPost: {
-		backgroundColor: "#82D8D8",
-		padding: 20
+		backgroundColor: "#82D8D8"
 	},
 	newPostText: {
 		fontSize: 20,

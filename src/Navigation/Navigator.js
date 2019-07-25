@@ -27,9 +27,6 @@ const Home = props => {
 			<Fab onPress={newPost} style={styles.newPost}>
 				<Icon name="add" />
 			</Fab>
-			<TouchableHighlight onPress={newPost} style={styles.newPost}>
-				<Text style={styles.newPostText}>New Post +</Text>
-			</TouchableHighlight>
 		</View>
 	);
 };

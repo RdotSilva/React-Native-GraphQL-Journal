@@ -1,5 +1,6 @@
 import React, { useState, setState } from "react";
 import { View, Text, TextInput, Button, StyleSheet } from "react-native";
+import { Form, Item, Input, Label } from "native-base";
 
 const PostForm = props => {
 	const [formData, setFormData] = useState({
@@ -17,13 +18,18 @@ const PostForm = props => {
 	};
 
 	return (
-		<View>
-			<TextInput
-				style={styles.title}
-				onChangeText={title => setFormData({ ...formData, title })}
-				value={title}
-				placeholder="Title"
-			/>
+		<Form>
+			<Item floatingLabel>
+				<Label>Title</Label>
+				<Input
+					style={styles.title}
+					onChangeText={title => setFormData({ ...formData, title })}
+					value={title}
+					placeholder="Title"
+				/>
+				>
+			</Item>
+
 			<TextInput
 				style={styles.body}
 				onChangeText={body => setFormData({ ...formData, body })}
@@ -31,7 +37,7 @@ const PostForm = props => {
 				placeholder="Body"
 			/>
 			<Button title="Save Post" onPress={submitForm} />
-		</View>
+		</Form>
 	);
 };
 

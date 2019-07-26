@@ -22,11 +22,9 @@ const PostForm = props => {
 			<Item floatingLabel>
 				<Label>Title</Label>
 				<Input
-					style={styles.title}
 					onChangeText={title => setFormData({ ...formData, title })}
 					value={title}
 				/>
-				>
 			</Item>
 			<Item floatingLabel>
 				<Label>Body</Label>
@@ -35,24 +33,15 @@ const PostForm = props => {
 					onChangeText={body => setFormData({ ...formData, body })}
 					value={body}
 				/>
-				>
 			</Item>
-
 			<Button title="Save Post" onPress={submitForm} />
 		</Form>
 	);
 };
 
 const styles = StyleSheet.create({
-	title: {
-		height: 40,
-		borderColor: "#333",
-		borderWidth: 1
-	},
 	body: {
 		height: 400,
-		borderColor: "#333",
-		borderWidth: 1,
 		textAlignVertical: "top"
 	}
 });

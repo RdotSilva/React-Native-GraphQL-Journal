@@ -10,5 +10,9 @@ export default {
 		flex: 1,
 		fontWeight: "bold",
 		color: "#fff"
-	}
+	},
+	headerBackTitleStyle: {
+		color: "#82D8D8"
+	},
+	headerTintColor: "#82D8D8"
 };

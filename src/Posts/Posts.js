@@ -66,7 +66,7 @@ const Posts = ({ navigation }) => {
 
 const POSTS_QUERY = gql`
 	query postsQuery {
-		allPosts {
+		allPosts(orderBy: createdAt_DESC) {
 			id
 			title
 		}

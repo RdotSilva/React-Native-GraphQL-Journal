@@ -19,20 +19,20 @@ const PostForm = props => {
 
 	return (
 		<Form>
-			<Item floatingLabel>
-				<Label>Title</Label>
+			<Item>
 				<Input
 					onChangeText={title => setFormData({ ...formData, title })}
 					value={title}
+					placeholder="Title"
 				/>
 			</Item>
-			<Item floatingLabel>
-				<Label>Body</Label>
+			<Item>
 				<Input
 					multiline
 					style={styles.body}
 					onChangeText={body => setFormData({ ...formData, body })}
 					value={body}
+					placeholder="Body"
 				/>
 			</Item>
 			<Button title="Save Post" onPress={submitForm} />

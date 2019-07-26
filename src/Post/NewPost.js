@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, ActivityIndicator } from "react-native";
 import PostForm from "./PostForm";
+import navStyles from "../../assets/stylesheets/navStyles";
 
 import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
@@ -70,5 +71,13 @@ const NEW_POST = gql`
 		}
 	}
 `;
+
+// Nav header options
+NewPost.navigationOptions = ({ navigation }) => {
+	return {
+		title: "New Post",
+		...navStyles
+	};
+};
 
 export default NewPost;

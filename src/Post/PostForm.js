@@ -29,6 +29,7 @@ const PostForm = props => {
 			<Item floatingLabel>
 				<Label>Body</Label>
 				<Input
+					multiline
 					style={styles.body}
 					onChangeText={body => setFormData({ ...formData, body })}
 					value={body}

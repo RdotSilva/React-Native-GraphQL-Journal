@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, ActivityIndicator } from "react-native";
+import { View, Text, ActivityIndicator, StyleSheet } from "react-native";
 import navStyles from "../../assets/stylesheets/navStyles";
 
 import { compose, graphql, Query } from "react-apollo";
@@ -17,8 +17,8 @@ const Post = props => {
 	if (loading) return <ActivityIndicator size="large" />;
 
 	return (
-		<View>
-			<Text>{Post.body}</Text>
+		<View style={styles.container}>
+			<Text style={styles.bodyText}>{Post.body}</Text>
 		</View>
 	);
 };
@@ -55,6 +55,15 @@ const postQuery = gql`
 		}
 	}
 `;
+
+const styles = StyleSheet.create({
+	container: {
+		padding: 20
+	},
+	bodyText: {
+		fontSize: 16
+	}
+});
 
 export default Post;
 

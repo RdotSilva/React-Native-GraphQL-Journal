@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Button } from "react-native";
 
 import CreateUser from "./CreateUser";
 import LoginUser from "./LoginUser";
@@ -9,7 +9,7 @@ const Login = () => {
 
 	return (
 		<View style={styles.container}>
-			<CreateUser />
+			{register ? <CreateUser /> : <LoginUser />}
 		</View>
 	);
 };

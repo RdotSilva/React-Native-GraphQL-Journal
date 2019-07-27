@@ -11,6 +11,7 @@ import { Fab, Icon } from "native-base";
 import Post from "../Post/Post";
 import NewPost from "../Post/NewPost";
 import Posts from "../Posts/Posts";
+import Login from "../User/Login";
 
 const Home = props => {
 	const goToPost = () => {
@@ -64,4 +65,11 @@ const AppNavigator = createStackNavigator({
 	}
 });
 
-export default createAppContainer(AppNavigator);
+const NavWrapper = props => {
+	return <Login />;
+	return <AppNavigator />;
+};
+
+export default NavWrapper;
+
+// export default createAppContainer(AppNavigator);

@@ -4,9 +4,16 @@ import { Form, Item, Input, Label } from "native-base";
 
 const UserForm = () => {
 	return (
-		<View>
-			<Text />
-		</View>
+		<Form>
+			<Item>
+				<Input
+					keyboardType="email-address"
+					value={email}
+					onChangeText={email => setFormData({ ...formData, email })}
+				/>
+			</Item>
+			<Item />
+		</Form>
 	);
 };
 

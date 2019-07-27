@@ -15,9 +15,17 @@ const UserForm = () => {
 					keyboardType="email-address"
 					value={email}
 					onChangeText={email => setFormData({ ...formData, email })}
+					placeholder="Email"
 				/>
 			</Item>
-			<Item />
+			<Item>
+				<Input
+					secureTextEntry
+					value={password}
+					onChangeText={password => setFormData({ ...formData, password })}
+					placeholder="Password"
+				/>
+			</Item>
 		</Form>
 	);
 };

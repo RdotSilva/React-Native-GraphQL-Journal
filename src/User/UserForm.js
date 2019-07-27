@@ -26,6 +26,7 @@ const UserForm = () => {
 					placeholder="Password"
 				/>
 			</Item>
+			<Button title={props.type} onPress={submitForm} />
 		</Form>
 	);
 };

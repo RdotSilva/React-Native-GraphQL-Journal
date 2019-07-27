@@ -4,6 +4,9 @@ import { View, Text } from "react-native";
 import UserForm from "./UserForm";
 
 const LoginUser = () => {
+	loginUser = () => {
+		// TODO
+	};
 	return (
 		<View>
 			<Text>Login</Text>

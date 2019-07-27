@@ -8,6 +8,10 @@ const UserForm = () => {
 		password: ""
 	});
 
+	submitForm = () => {
+		// TODO
+	};
+
 	return (
 		<Form>
 			<Item>

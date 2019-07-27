@@ -1,10 +1,12 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
+import CreateUser from "./CreateUser";
+
 const Login = () => {
 	return (
 		<View>
-			<Text />
+			<CreateUser />
 		</View>
 	);
 };

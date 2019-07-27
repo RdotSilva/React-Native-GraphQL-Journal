@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
 
 import CreateUser from "./CreateUser";
+import LoginUser from "./LoginUser";
 
 const Login = () => {
+	const [register, setRegister] = useState(true);
+
 	return (
 		<View style={styles.container}>
 			<CreateUser />

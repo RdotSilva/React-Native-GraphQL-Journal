@@ -5,7 +5,7 @@ import CreateUser from "./CreateUser";
 
 const Login = () => {
 	return (
-		<View>
+		<View style={styles.container}>
 			<CreateUser />
 		</View>
 	);

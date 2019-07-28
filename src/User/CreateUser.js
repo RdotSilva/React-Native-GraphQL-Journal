@@ -8,7 +8,13 @@ import { useMutation } from "@apollo/react-hooks";
 
 import UserForm from "./UserForm";
 
-const CreateUser = () => {
+const CreateUser = props => {
+	const [createUser] = useMutation(CREATE_USER, {
+		variables: { email: email, password: password }
+	});
+
+	const { email, password } = props;
+
 	createUser = () => {
 		// TODO
 	};
@@ -20,7 +26,7 @@ const CreateUser = () => {
 	);
 };
 
-const createUser = gql`
+const CREATE_USER = gql`
 	mutation createUser($email: String!, $password: String!) {
 		createUser(
 			authProvider: { email: { email: $email, password: $password } }
@@ -30,7 +36,7 @@ const createUser = gql`
 	}
 `;
 
-const signInUser = gql`
+const SIGN_IN_USER = gql`
 	mutation signInUser($email: String!, $password: String!) {
 		signInUser(email: $email, password: $password) {
 			token

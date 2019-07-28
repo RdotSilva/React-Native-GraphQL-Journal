@@ -9,6 +9,7 @@ const CreateUser = () => {
 	};
 	return (
 		<View>
+			<Text>Register</Text>
 			<UserForm type="Register" onSubmit={createUser} />
 		</View>
 	);

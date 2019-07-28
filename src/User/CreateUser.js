@@ -13,7 +13,7 @@ const CreateUser = props => {
 		variables: { email: email, password: password }
 	});
 
-	const [signInUser] = useMutation(SIGN_IN_USER, {
+	const [signinUser] = useMutation(SIGN_IN_USER, {
 		variables: { email: email, password: password }
 	});
 
@@ -24,10 +24,10 @@ const CreateUser = props => {
 			const user = await makeUser({
 				variables: { email, password }
 			});
-			const signIn = await signInUser({
+			const signIn = await signinUser({
 				variables: { email, password }
 			});
-			console.log(signIn.data.signInUser.token);
+			console.log(signIn.data.signinUser.token);
 		} catch (err) {
 			console.log(err);
 		}
@@ -51,8 +51,8 @@ const CREATE_USER = gql`
 `;
 
 const SIGN_IN_USER = gql`
-	mutation signInUser($email: String!, $password: String!) {
-		signInUser(email: $email, password: $password) {
+	mutation signinUser($email: String!, $password: String!) {
+		signinUser(email: { email: $email, password: $password }) {
 			token
 		}
 	}

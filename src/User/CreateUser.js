@@ -24,7 +24,10 @@ const CreateUser = props => {
 			const user = await createUser({
 				variable: { email, password }
 			});
-			const signIn = await SIGN_IN_USER;
+			const signIn = await signInUser({
+				variable: { email, password }
+			});
+			console.log(signIn.data.signInUser.token);
 		} catch (err) {
 			console.log(err);
 		}

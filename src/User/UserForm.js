@@ -11,7 +11,11 @@ const UserForm = props => {
 	const { email, password } = formData;
 
 	submitForm = () => {
-		// TODO
+		const { email, password } = formData;
+		props.onSubmit({
+			email,
+			password
+		});
 	};
 
 	return (

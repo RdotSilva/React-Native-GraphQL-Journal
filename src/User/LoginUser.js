@@ -7,13 +7,22 @@ import { useMutation } from "@apollo/react-hooks";
 
 import UserForm from "./UserForm";
 
-const LoginUser = () => {
+const LoginUser = props => {
 	const [signinUser] = useMutation(SIGN_IN_USER, {
 		variables: { email: email, password: password }
 	});
 
-	loginUser = () => {
-		// TODO
+	const { email, password } = props;
+
+	loginUser = async ({ email, password }) => {
+		try {
+			const signIn = await signinUser({
+				variables: { email, password }
+			});
+			console.log(signIn.data.signinUser.token);
+		} catch (err) {
+			console.log(err);
+		}
 	};
 	return (
 		<View>

@@ -1,5 +1,10 @@
 import React from "react";
 import { View, Text } from "react-native";
+import gql from "graphql-tag";
+import { compose } from "react-apollo";
+
+// Apollo hooks
+import { useMutation } from "@apollo/react-hooks";
 
 import UserForm from "./UserForm";
 
@@ -14,5 +19,15 @@ const CreateUser = () => {
 		</View>
 	);
 };
+
+const createUser = gql`
+	mutation createUser($email: String!, $password: String!) {
+		createUser(
+			authProvider: { email: { email: $email, password: $password } }
+		) {
+			id
+		}
+	}
+`;
 
 export default CreateUser;

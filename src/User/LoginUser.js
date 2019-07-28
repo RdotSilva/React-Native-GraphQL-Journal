@@ -8,6 +8,10 @@ import { useMutation } from "@apollo/react-hooks";
 import UserForm from "./UserForm";
 
 const LoginUser = () => {
+	const [signinUser] = useMutation(SIGN_IN_USER, {
+		variables: { email: email, password: password }
+	});
+
 	loginUser = () => {
 		// TODO
 	};

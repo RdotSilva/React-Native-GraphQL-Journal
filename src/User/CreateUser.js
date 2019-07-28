@@ -15,8 +15,15 @@ const CreateUser = props => {
 
 	const { email, password } = props;
 
-	createUser = () => {
-		// TODO
+	createUser = async ({ email, password }) => {
+		try {
+			const user = await createUser({
+				variable: { email, password }
+			});
+			const signIn = await SIGN_IN_USER;
+		} catch (err) {
+			console.log(err);
+		}
 	};
 	return (
 		<View>

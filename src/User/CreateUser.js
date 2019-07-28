@@ -13,6 +13,10 @@ const CreateUser = props => {
 		variables: { email: email, password: password }
 	});
 
+	const [signInUser] = useMutation(SIGN_IN_USER, {
+		variables: { email: email, password: password }
+	});
+
 	const { email, password } = props;
 
 	createUser = async ({ email, password }) => {

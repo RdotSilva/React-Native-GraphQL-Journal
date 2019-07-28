@@ -9,7 +9,7 @@ import { useMutation } from "@apollo/react-hooks";
 import UserForm from "./UserForm";
 
 const CreateUser = props => {
-	const [createUser] = useMutation(CREATE_USER, {
+	const [makeUser] = useMutation(CREATE_USER, {
 		variables: { email: email, password: password }
 	});
 
@@ -21,7 +21,7 @@ const CreateUser = props => {
 
 	createUser = async ({ email, password }) => {
 		try {
-			const user = await createUser({
+			const user = await makeUser({
 				variables: { email, password }
 			});
 			const signIn = await signInUser({

@@ -22,10 +22,10 @@ const CreateUser = props => {
 	createUser = async ({ email, password }) => {
 		try {
 			const user = await createUser({
-				variable: { email, password }
+				variables: { email, password }
 			});
 			const signIn = await signInUser({
-				variable: { email, password }
+				variables: { email, password }
 			});
 			console.log(signIn.data.signInUser.token);
 		} catch (err) {

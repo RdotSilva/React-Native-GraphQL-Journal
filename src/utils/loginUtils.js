@@ -10,11 +10,11 @@ export const getToken = async () => {
 	return token;
 };
 
-export const signIn = newToken => {
+export const signInUser = newToken => {
 	return AsyncStorage.setItem("AUTH_TOKEN", newToken);
 };
 
-export const signOut = () => {
+export const signOutUser = () => {
 	token = undefined;
 	return AsyncStorage.remove("AUTH_TOKEN");
 };

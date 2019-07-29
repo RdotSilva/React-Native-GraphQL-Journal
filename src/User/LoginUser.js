@@ -6,7 +6,7 @@ import gql from "graphql-tag";
 import { useMutation } from "@apollo/react-hooks";
 
 import UserForm from "./UserForm";
-import { signIn } from "../utils/loginUtils";
+import { signInUser } from "../utils/loginUtils";
 
 const LoginUser = props => {
 	const [signinUser] = useMutation(SIGN_IN_USER, {
@@ -20,7 +20,7 @@ const LoginUser = props => {
 			const signIn = await signinUser({
 				variables: { email, password }
 			});
-			signIn(signIn.data.signinUser.token);
+			signInUser(signIn.data.signinUser.token);
 		} catch (err) {
 			console.log(err);
 		}

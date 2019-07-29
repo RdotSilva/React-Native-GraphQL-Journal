@@ -7,7 +7,7 @@ import { compose } from "react-apollo";
 import { useMutation } from "@apollo/react-hooks";
 
 import UserForm from "./UserForm";
-import { signIn } from "../utils/loginUtils";
+import { signInUser } from "../utils/loginUtils";
 
 const CreateUser = props => {
 	const [makeUser] = useMutation(CREATE_USER, {
@@ -28,7 +28,7 @@ const CreateUser = props => {
 			const signIn = await signinUser({
 				variables: { email, password }
 			});
-			signIn(signIn.data.signinUser.token);
+			signInUser(signIn.data.signinUser.token);
 		} catch (err) {
 			console.log(err);
 		}

@@ -1,5 +1,17 @@
 import React from "react";
 import Navigator from "./src/Navigation/Navigator";
+import { setContext } from "apollo-link-context";
+import { getToken } from "./src/utils/loginUtils";
+
+const authLink = setContext(async (req, { headers }) => {
+	const token = await getToken();
+	return {
+		...headers,
+		headers: {
+			authorization: token ? `Bearer ${token}` : null;
+		}
+	};
+});
 
 // Apollo Import
 import ApolloClient from "apollo-boost";

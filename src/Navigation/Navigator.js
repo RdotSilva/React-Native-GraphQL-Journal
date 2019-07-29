@@ -1,6 +1,12 @@
 import React from "react";
 import { createStackNavigator, createAppContainer } from "react-navigation";
-import { StyleSheet, View, Text, TouchableHighlight } from "react-native";
+import {
+	StyleSheet,
+	View,
+	Text,
+	TouchableHighlight,
+	ActivityIndicator
+} from "react-native";
 
 import navStyles from "../../assets/stylesheets/navStyles";
 
@@ -70,9 +76,16 @@ const AppNavigator = createStackNavigator({
 	}
 });
 
+const MainAppNavigator = createAppContainer(AppNavigator);
+
 const NavWrapper = props => {
-	return <Login />;
-	return <AppNavigator />;
+	const { loading, data } = useQuery(USER_QUERY);
+	console.log(data.user);
+
+	if (loading) return <ActivityIndicator size="large" />;
+	if (!data.user) return <Login />;
+
+	return <MainAppNavigator />;
 };
 
 const USER_QUERY = gql`

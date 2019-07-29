@@ -17,12 +17,14 @@ const httpLink = new HttpLink({
 	uri: "https://api.graph.cool/simple/v1/cjybv96jy2msk014182vlh1z0"
 })
 
+const link = authLink.concat(httpLink);
+
 // Apollo Import
 import ApolloClient, { HttpLink } from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
 
 const client = new ApolloClient({
-	uri: "https://api.graph.cool/simple/v1/cjybv96jy2msk014182vlh1z0"
+	uri: link
 });
 
 const App = () => {

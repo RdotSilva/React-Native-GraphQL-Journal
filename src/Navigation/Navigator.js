@@ -4,6 +4,11 @@ import { StyleSheet, View, Text, TouchableHighlight } from "react-native";
 
 import navStyles from "../../assets/stylesheets/navStyles";
 
+import { gql } from "apollo-boost";
+
+// Apollo hooks
+import { useQuery } from "@apollo/react-hooks";
+
 // Native Base
 import { Fab, Icon } from "native-base";
 
@@ -69,6 +74,15 @@ const NavWrapper = props => {
 	return <Login />;
 	return <AppNavigator />;
 };
+
+const USER_QUERY = gql`
+	query userQuery {
+		user {
+			id
+			email
+		}
+	}
+`;
 
 export default NavWrapper;
 

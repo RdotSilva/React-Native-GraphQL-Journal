@@ -93,6 +93,10 @@ const USER_QUERY = gql`
 		user {
 			id
 			email
+			posts {
+				id
+				title
+			}
 		}
 	}
 `;

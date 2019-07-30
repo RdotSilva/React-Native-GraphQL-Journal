@@ -17,11 +17,11 @@ const NewPost = props => {
 		refetchQueries: ["postsQuery"]
 	});
 
-	const { navigation, title, body } = props;
+	const { navigation, title, body, screenProps } = props;
 
 	const newPost = ({ title, body }) => {
 		setLoading(true);
-		createPost({ variables: { title, body } })
+		createPost({ variables: { title, body, userId: screenProps.user.id } })
 			.then(() => {
 				navigation.goBack();
 			})
@@ -30,6 +30,8 @@ const NewPost = props => {
 				console.log(error);
 			});
 	};
+
+	console.log(props.screenProps.user);
 
 	return (
 		<View>

@@ -31,8 +31,6 @@ const NewPost = props => {
 			});
 	};
 
-	console.log(props.screenProps.user);
-
 	return (
 		<View>
 			{loading ? (

@@ -1,25 +1,15 @@
 import React from "react";
-import { View, Text, FlatList, ActivityIndicator } from "react-native";
-import { compose, graphql, Query } from "react-apollo";
-import { gql } from "apollo-boost";
+import { View, Text, FlatList } from "react-native";
 
 // Native Base
 import { List, ListItem, Body, Right, Icon } from "native-base";
 
-// Apollo hooks
-import { useQuery } from "@apollo/react-hooks";
-
-const Posts = ({ navigation }) => {
-	const { loading, data } = useQuery(POSTS_QUERY);
-	const { allPosts } = data;
-
-	if (loading) return <ActivityIndicator size="large" />;
-
+const Posts = ({ navigation, screenProps }) => {
 	return (
 		<View>
 			<List>
 				<FlatList
-					data={allPosts}
+					data={screenProps.user.posts}
 					renderItem={({ item }) => (
 						<ListItem
 							onPress={() =>
@@ -64,13 +54,14 @@ const Posts = ({ navigation }) => {
 // 	</Query>
 // );
 
-const POSTS_QUERY = gql`
-	query postsQuery {
-		allPosts(orderBy: createdAt_DESC) {
-			id
-			title
-		}
-	}
-`;
+// NO LONGER NEEDED - screenProps replaces this.
+// const POSTS_QUERY = gql`
+// 	query postsQuery {
+// 		allPosts(orderBy: createdAt_DESC) {
+// 			id
+// 			title
+// 		}
+// 	}
+// `;
 
 export default Posts;

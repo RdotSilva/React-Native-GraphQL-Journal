@@ -93,7 +93,7 @@ const USER_QUERY = gql`
 		user {
 			id
 			email
-			posts {
+			posts(orderBy: createdAt_DESC) {
 				id
 				title
 			}

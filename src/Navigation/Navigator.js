@@ -80,12 +80,12 @@ const MainAppNavigator = createAppContainer(AppNavigator);
 
 const NavWrapper = props => {
 	const { loading, data } = useQuery(USER_QUERY);
-	console.log(data.user);
+	const user = data.user;
 
 	if (loading) return <ActivityIndicator size="large" />;
 	if (!data.user) return <Login />;
 
-	return <MainAppNavigator />;
+	return <MainAppNavigator screenProps={{ user }} />;
 };
 
 const USER_QUERY = gql`

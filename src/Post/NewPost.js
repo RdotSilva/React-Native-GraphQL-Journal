@@ -67,8 +67,8 @@ const NewPost = props => {
 // );
 
 const NEW_POST = gql`
-	mutation NewPost($title: String!, $body: String!) {
-		createPost(title: $title, body: $body) {
+	mutation NewPost($title: String!, $body: String!, $userId: ID!) {
+		createPost(title: $title, body: $body, userId: $userId) {
 			id
 		}
 	}

@@ -24,6 +24,7 @@ import Post from "../Post/Post";
 import NewPost from "../Post/NewPost";
 import Posts from "../Posts/Posts";
 import Login from "../User/Login";
+import { signOutUser } from "../utils/loginUtils";
 
 const Home = props => {
 	const goToPost = () => {
@@ -37,7 +38,7 @@ const Home = props => {
 	return (
 		<View style={styles.container}>
 			<Posts {...props} />
-			<Button title="Sign Out" />
+			<Button title="Sign Out" onPress={() => signOutUser()} />
 			<Fab onPress={newPost} style={styles.newPost}>
 				<Icon name="add" />
 			</Fab>

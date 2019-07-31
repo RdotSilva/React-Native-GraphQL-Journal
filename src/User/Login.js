@@ -10,7 +10,7 @@ const Login = () => {
 
 	return (
 		<View style={styles.container}>
-			{register ? <CreateUser /> : <LoginUser />}
+			{register ? <CreateUser {...props} /> : <LoginUser {...props} />}
 			<Button
 				onPress={() => setRegister(!register)}
 				title={register ? "Login" : "Register"}

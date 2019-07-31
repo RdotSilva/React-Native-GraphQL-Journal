@@ -5,7 +5,8 @@ import {
 	View,
 	Text,
 	TouchableHighlight,
-	ActivityIndicator
+	ActivityIndicator,
+	Button
 } from "react-native";
 
 import navStyles from "../../assets/stylesheets/navStyles";
@@ -36,6 +37,7 @@ const Home = props => {
 	return (
 		<View style={styles.container}>
 			<Posts {...props} />
+			<Button title="Sign Out" />
 			<Fab onPress={newPost} style={styles.newPost}>
 				<Icon name="add" />
 			</Fab>

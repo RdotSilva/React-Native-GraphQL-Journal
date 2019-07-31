@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
+import { withApollo } from "react-apollo";
 
 import CreateUser from "./CreateUser";
 import LoginUser from "./LoginUser";
@@ -25,4 +26,4 @@ const styles = StyleSheet.create({
 	}
 });
 
-export default Login;
+export default withApollo(Login);

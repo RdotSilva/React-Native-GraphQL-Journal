@@ -21,6 +21,7 @@ const LoginUser = props => {
 				variables: { email, password }
 			});
 			signInUser(signIn.data.signinUser.token);
+			props.client.resetStore();
 		} catch (err) {
 			console.log(err);
 		}

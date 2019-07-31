@@ -10,7 +10,7 @@ const Login = () => {
 
 	return (
 		<View style={styles.container}>
-			{register ? <CreateUser {...props} /> : <LoginUser {...props} />}
+			{register ? <CreateUser /> : <LoginUser />}
 			<Button
 				onPress={() => setRegister(!register)}
 				title={register ? "Login" : "Register"}
@@ -26,4 +26,4 @@ const styles = StyleSheet.create({
 	}
 });
 
-export default withApollo(Login);
+export default Login;

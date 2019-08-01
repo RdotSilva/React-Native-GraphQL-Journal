@@ -4,8 +4,8 @@ import { Form, Item, Input, Label } from "native-base";
 
 const PostForm = props => {
 	const [formData, setFormData] = useState({
-		title: "",
-		body: ""
+		title: props.post.title || "",
+		body: props.post.body || ""
 	});
 
 	const { title, body } = formData;

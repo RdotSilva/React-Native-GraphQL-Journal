@@ -6,7 +6,7 @@ import { compose, graphql, Query } from "react-apollo";
 import { gql } from "apollo-boost";
 
 // Native Base
-import { Fab, Icon } from "native-base";
+import { Fab, Icon, Item } from "native-base";
 
 // Apollo hooks
 import { useQuery } from "@apollo/react-hooks";
@@ -18,7 +18,10 @@ const Post = props => {
 	const { Post } = data;
 
 	const updatePost = () => {
-		props.navigation.navigate("UpdatePost");
+		props.navigation.navigate("UpdatePost", {
+			id: Post.id,
+			title: Post.title
+		});
 	};
 
 	if (loading) return <ActivityIndicator size="large" />;

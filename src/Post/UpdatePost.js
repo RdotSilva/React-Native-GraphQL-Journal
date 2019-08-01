@@ -53,7 +53,7 @@ const NEW_POST = gql`
 // Nav header options
 UpdatePost.navigationOptions = ({ navigation }) => {
 	return {
-		title: "New Post",
+		title: "Update Post",
 		...navStyles
 	};
 };

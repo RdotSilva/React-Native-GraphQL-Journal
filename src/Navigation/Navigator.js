@@ -38,7 +38,14 @@ const Home = props => {
 	return (
 		<View style={styles.container}>
 			<Posts {...props} />
-			<Button title="Sign Out" onPress={() => signOutUser()} />
+			<Button
+				title="Sign Out"
+				onPress={() => {
+					// Clear cache and resetStore to re-render and return to login screen.
+					signOutUser();
+					props.screenProps.client.resetStore();
+				}}
+			/>
 			<Fab onPress={newPost} style={styles.newPost}>
 				<Icon name="add" />
 			</Fab>
@@ -82,13 +89,14 @@ const AppNavigator = createStackNavigator({
 const MainAppNavigator = createAppContainer(AppNavigator);
 
 const NavWrapper = props => {
-	const { loading, data } = useQuery(USER_QUERY);
+	const { loading, data, client } = useQuery(USER_QUERY);
 	const user = data.user;
+	// console.log(client);
 
 	if (loading) return <ActivityIndicator size="large" />;
 	if (!data.user) return <Login />;
 
-	return <MainAppNavigator screenProps={{ user }} />;
+	return <MainAppNavigator screenProps={{ user, client }} />;
 };
 
 const USER_QUERY = gql`

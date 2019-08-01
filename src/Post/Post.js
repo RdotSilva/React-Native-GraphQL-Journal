@@ -5,6 +5,9 @@ import navStyles from "../../assets/stylesheets/navStyles";
 import { compose, graphql, Query } from "react-apollo";
 import { gql } from "apollo-boost";
 
+// Native Base
+import { Fab, Icon } from "native-base";
+
 // Apollo hooks
 import { useQuery } from "@apollo/react-hooks";
 
@@ -19,8 +22,8 @@ const Post = props => {
 	return (
 		<View style={styles.container}>
 			<Text style={styles.bodyText}>{Post.body}</Text>
-			<Fab onPress={newPost} style={styles.newPost}>
-				<Icon name="add" />
+			<Fab style={styles.editPost}>
+				<Icon name="create" />
 			</Fab>
 		</View>
 	);
@@ -65,6 +68,9 @@ const styles = StyleSheet.create({
 	},
 	bodyText: {
 		fontSize: 16
+	},
+	editPost: {
+		backgroundColor: "#82D8D8"
 	}
 });
 

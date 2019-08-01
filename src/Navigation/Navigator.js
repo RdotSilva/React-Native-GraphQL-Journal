@@ -21,8 +21,10 @@ import { Fab, Icon } from "native-base";
 
 // Component imports
 import Post from "../Post/Post";
+import UpdatePost from "../Post/UpdatePost";
 import NewPost from "../Post/NewPost";
 import Posts from "../Posts/Posts";
+
 import Login from "../User/Login";
 import { signOutUser } from "../utils/loginUtils";
 
@@ -83,6 +85,9 @@ const AppNavigator = createStackNavigator({
 	},
 	NewPost: {
 		screen: NewPost
+	},
+	UpdatePost: {
+		screen: UpdatePost
 	}
 });
 

@@ -12,21 +12,22 @@ import { useMutation, useQuery } from "@apollo/react-hooks";
 const UpdatePost = props => {
 	const [loading, setLoading] = useState(false);
 
-	const [updatePost] = useMutation(UPDATE_POST, {
-		variables: { title: title, body: body }
-	});
-
 	const { data } = useQuery(POST_QUERY, {
 		variables: { id: props.navigation.state.params.id }
 	});
 	const { Post } = data;
-	console.log(Post);
+
+	const [updatePost] = useMutation(UPDATE_POST, {
+		variables: { id: Post.id, title: title, body: body }
+	});
 
 	const { navigation, title, body, screenProps } = props;
 
 	const updateUserPost = ({ title, body }) => {
 		setLoading(true);
-		updatePost({ variables: { title, body, userId: screenProps.user.id } })
+		updatePost({
+			variables: { id: Post.id, title, body, userId: screenProps.user.id }
+		})
 			.then(() => {
 				navigation.goBack();
 			})

@@ -3,12 +3,13 @@ import { View, Text } from "react-native";
 import gql from "graphql-tag";
 
 // Apollo hooks
-import { useMutation } from "@apollo/react-hooks";
+import { useMutation, useApolloClient } from "@apollo/react-hooks";
 
 import UserForm from "./UserForm";
 import { signInUser } from "../utils/loginUtils";
 
 const LoginUser = props => {
+	const client = useApolloClient();
 	const [signinUser] = useMutation(SIGN_IN_USER, {
 		variables: { email: email, password: password }
 	});
@@ -21,7 +22,7 @@ const LoginUser = props => {
 				variables: { email, password }
 			});
 			signInUser(signIn.data.signinUser.token);
-			props.client.resetStore();
+			client.resetStore();
 		} catch (err) {
 			console.log(err);
 		}

@@ -48,8 +48,8 @@ const UpdatePost = props => {
 };
 
 const UPDATE_POST = gql`
-	mutation updatePost($title: String!, $body: String!, $userId: ID!) {
-		updatePost(title: $title, body: $body, userId: $userId) {
+	mutation updatePost($id: ID!, $title: String!, $body: String!, $userId: ID!) {
+		updatePost(id: $id, title: $title, body: $body, userId: $userId) {
 			id
 		}
 	}

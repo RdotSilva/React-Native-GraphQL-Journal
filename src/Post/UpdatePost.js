@@ -7,7 +7,7 @@ import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
 
 // Apollo hooks
-import { useMutation } from "@apollo/react-hooks";
+import { useMutation, useQuery } from "@apollo/react-hooks";
 
 const UpdatePost = props => {
 	const [loading, setLoading] = useState(false);
@@ -16,6 +16,12 @@ const UpdatePost = props => {
 		variables: { title: title, body: body },
 		refetchQueries: ["postsQuery"]
 	});
+
+	const { data } = useQuery(POST_QUERY, {
+		variables: { id: props.navigation.state.params.id }
+	});
+	const { Post } = data;
+	console.log(Post);
 
 	const { navigation, title, body, screenProps } = props;
 
@@ -46,6 +52,16 @@ const NEW_POST = gql`
 	mutation NewPost($title: String!, $body: String!, $userId: ID!) {
 		createPost(title: $title, body: $body, userId: $userId) {
 			id
+		}
+	}
+`;
+
+const POST_QUERY = gql`
+	query Post($id: ID!) {
+		Post(id: $id) {
+			id
+			title
+			body
 		}
 	}
 `;

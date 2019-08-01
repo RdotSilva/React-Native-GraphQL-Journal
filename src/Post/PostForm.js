@@ -47,4 +47,8 @@ const styles = StyleSheet.create({
 	}
 });
 
+PostForm.defaultProps = {
+	post: {}
+};
+
 export default PostForm;

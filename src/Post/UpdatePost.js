@@ -18,7 +18,8 @@ const UpdatePost = props => {
 	const { Post } = data;
 
 	const [updatePost] = useMutation(UPDATE_POST, {
-		variables: { id: Post.id, title: title, body: body }
+		variables: { id: Post.id, title: title, body: body },
+		refetchQueries: ["Post"]
 	});
 
 	const { navigation, title, body, screenProps } = props;

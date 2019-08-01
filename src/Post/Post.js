@@ -19,6 +19,9 @@ const Post = props => {
 	return (
 		<View style={styles.container}>
 			<Text style={styles.bodyText}>{Post.body}</Text>
+			<Fab onPress={newPost} style={styles.newPost}>
+				<Icon name="add" />
+			</Fab>
 		</View>
 	);
 };

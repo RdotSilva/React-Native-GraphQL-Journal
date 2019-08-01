@@ -42,7 +42,7 @@ const UpdatePost = props => {
 			{loading ? (
 				<ActivityIndicator size="large" />
 			) : (
-				<PostForm onSubmit={newPost} />
+				<PostForm onSubmit={newPost} post={Post} />
 			)}
 		</View>
 	);

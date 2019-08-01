@@ -17,6 +17,10 @@ const Post = props => {
 	});
 	const { Post } = data;
 
+	const updatePost = () => {
+		props.navigation.navigate("UpdatePost");
+	};
+
 	if (loading) return <ActivityIndicator size="large" />;
 
 	return (

@@ -12,9 +12,8 @@ import { useMutation, useQuery } from "@apollo/react-hooks";
 const UpdatePost = props => {
 	const [loading, setLoading] = useState(false);
 
-	const [createPost] = useMutation(NEW_POST, {
-		variables: { title: title, body: body },
-		refetchQueries: ["postsQuery"]
+	const [updatePost] = useMutation(UPDATE_POST, {
+		variables: { title: title, body: body }
 	});
 
 	const { data } = useQuery(POST_QUERY, {
@@ -25,9 +24,9 @@ const UpdatePost = props => {
 
 	const { navigation, title, body, screenProps } = props;
 
-	const newPost = ({ title, body }) => {
+	const updateUserPost = ({ title, body }) => {
 		setLoading(true);
-		createPost({ variables: { title, body, userId: screenProps.user.id } })
+		updatePost({ variables: { title, body, userId: screenProps.user.id } })
 			.then(() => {
 				navigation.goBack();
 			})
@@ -42,15 +41,15 @@ const UpdatePost = props => {
 			{loading ? (
 				<ActivityIndicator size="large" />
 			) : (
-				<PostForm onSubmit={newPost} post={Post} />
+				<PostForm onSubmit={updateUserPost} post={Post} />
 			)}
 		</View>
 	);
 };
 
-const NEW_POST = gql`
-	mutation NewPost($title: String!, $body: String!, $userId: ID!) {
-		createPost(title: $title, body: $body, userId: $userId) {
+const UPDATE_POST = gql`
+	mutation updatePost($title: String!, $body: String!, $userId: ID!) {
+		updatePost(title: $title, body: $body, userId: $userId) {
 			id
 		}
 	}

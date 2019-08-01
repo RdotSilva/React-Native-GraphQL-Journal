@@ -4,12 +4,14 @@ import gql from "graphql-tag";
 import { compose } from "react-apollo";
 
 // Apollo hooks
-import { useMutation } from "@apollo/react-hooks";
+import { useMutation, useApolloClient } from "@apollo/react-hooks";
 
 import UserForm from "./UserForm";
 import { signInUser } from "../utils/loginUtils";
 
 const CreateUser = props => {
+	const client = useApolloClient();
+
 	const [makeUser] = useMutation(CREATE_USER, {
 		variables: { email: email, password: password }
 	});
@@ -29,7 +31,7 @@ const CreateUser = props => {
 				variables: { email, password }
 			});
 			signInUser(signIn.data.signinUser.token);
-			props.client.resetStore();
+			client.resetStore();
 		} catch (err) {
 			console.log(err);
 		}

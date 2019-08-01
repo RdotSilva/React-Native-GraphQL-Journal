@@ -22,7 +22,7 @@ const Post = props => {
 	return (
 		<View style={styles.container}>
 			<Text style={styles.bodyText}>{Post.body}</Text>
-			<Fab style={styles.editPost}>
+			<Fab onPress={updatePost} style={styles.editPost}>
 				<Icon name="create" />
 			</Fab>
 		</View>
@@ -64,7 +64,8 @@ const postQuery = gql`
 
 const styles = StyleSheet.create({
 	container: {
-		padding: 20
+		padding: 20,
+		flex: 1
 	},
 	bodyText: {
 		fontSize: 16

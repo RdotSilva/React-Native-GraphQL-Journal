@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
 		backgroundColor: "#e9e7ed"
 	},
 	newPost: {
-		backgroundColor: "#82D8D8"
+		backgroundColor: "#4a4259"
 	},
 	newPostText: {
 		fontSize: 20,

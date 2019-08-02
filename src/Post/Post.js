@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
 		fontSize: 16
 	},
 	editPost: {
-		backgroundColor: "#82D8D8"
+		backgroundColor: "#4a4259"
 	}
 });
 

@@ -31,37 +31,4 @@ const Posts = ({ navigation, screenProps }) => {
 	);
 };
 
-// const Posts = ({ navigation }) => (
-// 	<Query query={postsQuery}>
-// 		{({ loading, data: { allPosts } }) => {
-// 			if (loading) return <Text>Loading...</Text>;
-// return (
-// 	<View>
-// 		<FlatList
-// 			data={allPosts}
-// 			renderItem={({ item }) => (
-// 				<Text
-// 					onPress={() => navigation.navigate("Post", { id: item.id })}
-// 				>
-// 					{item.title}
-// 				</Text>
-// 			)}
-// 			keyExtractor={item => item.id}
-// 		/>
-// 	</View>
-// );
-// 		}}
-// 	</Query>
-// );
-
-// NO LONGER NEEDED - screenProps replaces this.
-// const POSTS_QUERY = gql`
-// 	query postsQuery {
-// 		allPosts(orderBy: createdAt_DESC) {
-// 			id
-// 			title
-// 		}
-// 	}
-// `;
-
 export default Posts;

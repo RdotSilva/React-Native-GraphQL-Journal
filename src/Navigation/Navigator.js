@@ -32,6 +32,7 @@ const Home = props => {
 		<View style={styles.container}>
 			<Posts {...props} />
 			<Button
+				color="#8d82a2"
 				title="Sign Out"
 				onPress={() => {
 					// Clear cache and resetStore to re-render and return to login screen.
@@ -55,7 +56,8 @@ Home.navigationOptions = {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		justifyContent: "space-between"
+		justifyContent: "space-between",
+		backgroundColor: "#e9e7ed"
 	},
 	newPost: {
 		backgroundColor: "#82D8D8"

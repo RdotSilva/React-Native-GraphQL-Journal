@@ -2,11 +2,7 @@ import React, { useState } from "react";
 import { View, Text, ActivityIndicator } from "react-native";
 import PostForm from "./PostForm";
 import navStyles from "../../assets/stylesheets/navStyles";
-
 import gql from "graphql-tag";
-import { Mutation } from "react-apollo";
-
-// Apollo hooks
 import { useMutation } from "@apollo/react-hooks";
 
 const NewPost = props => {
@@ -41,28 +37,6 @@ const NewPost = props => {
 		</View>
 	);
 };
-
-// const NewPost = props => (
-// 	<Mutation mutation={NEWPOST}>
-// 		{(createPost, { data }) => {
-// 			const { navigation } = props;
-
-// 			const newPost = ({ title, body }) => {
-// 				createPost({
-// 					variables: { title, body }
-// 				}).then(() => {
-// 					navigation.goBack();
-// 				});
-// 			};
-
-// 			return (
-// 				<View>
-// 					<PostForm onSubmit={newPost} />
-// 				</View>
-// 			);
-// 		}}
-// 	</Mutation>
-// );
 
 const NEW_POST = gql`
 	mutation NewPost($title: String!, $body: String!, $userId: ID!) {

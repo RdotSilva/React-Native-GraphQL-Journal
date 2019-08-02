@@ -10,6 +10,7 @@ const Login = () => {
 		<View style={styles.container}>
 			{register ? <CreateUser /> : <LoginUser />}
 			<Button
+				color="#8d82a2"
 				onPress={() => setRegister(!register)}
 				title={register ? "Login" : "Register"}
 			/>
@@ -20,7 +21,8 @@ const Login = () => {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		justifyContent: "center"
+		justifyContent: "center",
+		backgroundColor: "#e9e7ed"
 	}
 });
 

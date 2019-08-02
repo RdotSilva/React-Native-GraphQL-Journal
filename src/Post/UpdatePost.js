@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import { View, Text, ActivityIndicator } from "react-native";
+import { View, ActivityIndicator } from "react-native";
 import PostForm from "./PostForm";
 import navStyles from "../../assets/stylesheets/navStyles";
-
 import gql from "graphql-tag";
-import { Mutation } from "react-apollo";
 
 // Apollo hooks
 import { useMutation, useQuery } from "@apollo/react-hooks";

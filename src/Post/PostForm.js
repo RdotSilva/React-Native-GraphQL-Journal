@@ -1,6 +1,6 @@
 import React, { useState, setState } from "react";
-import { View, Text, TextInput, Button, StyleSheet } from "react-native";
-import { Form, Item, Input, Label } from "native-base";
+import { Button, StyleSheet } from "react-native";
+import { Form, Item, Input } from "native-base";
 
 const PostForm = props => {
 	const [formData, setFormData] = useState({

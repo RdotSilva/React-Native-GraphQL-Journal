@@ -49,7 +49,7 @@ const Home = props => {
 
 // Nav header options
 Home.navigationOptions = {
-	title: "Home",
+	title: "My Journal",
 	...navStyles
 };
 

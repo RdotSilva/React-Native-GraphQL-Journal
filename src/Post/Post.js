@@ -34,6 +34,7 @@ const Post = props => {
 Post.navigationOptions = ({ navigation }) => {
 	return {
 		title: navigation.state.params.title,
+		headerRight: <View />,
 		...navStyles
 	};
 };

@@ -50,6 +50,7 @@ const NEW_POST = gql`
 NewPost.navigationOptions = ({ navigation }) => {
 	return {
 		title: "New Post",
+		headerRight: <View />,
 		...navStyles
 	};
 };

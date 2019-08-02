@@ -69,6 +69,7 @@ const POST_QUERY = gql`
 UpdatePost.navigationOptions = ({ navigation }) => {
 	return {
 		title: "Update Post",
+		headerRight: <View />,
 		...navStyles
 	};
 };

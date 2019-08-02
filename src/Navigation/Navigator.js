@@ -1,32 +1,23 @@
 import React from "react";
 import { createStackNavigator, createAppContainer } from "react-navigation";
-import {
-	StyleSheet,
-	View,
-	Text,
-	TouchableHighlight,
-	ActivityIndicator,
-	Button
-} from "react-native";
-
-import navStyles from "../../assets/stylesheets/navStyles";
-
+import { StyleSheet, View, ActivityIndicator, Button } from "react-native";
+import { signOutUser } from "../utils/loginUtils";
 import { gql } from "apollo-boost";
-
-// Apollo hooks
-import { useQuery } from "@apollo/react-hooks";
-
-// Native Base
-import { Fab, Icon } from "native-base";
 
 // Component imports
 import Post from "../Post/Post";
 import UpdatePost from "../Post/UpdatePost";
 import NewPost from "../Post/NewPost";
 import Posts from "../Posts/Posts";
-
 import Login from "../User/Login";
-import { signOutUser } from "../utils/loginUtils";
+
+import navStyles from "../../assets/stylesheets/navStyles";
+
+// Apollo hooks
+import { useQuery } from "@apollo/react-hooks";
+
+// Native Base
+import { Fab, Icon } from "native-base";
 
 const Home = props => {
 	const goToPost = () => {
@@ -118,5 +109,3 @@ const USER_QUERY = gql`
 `;
 
 export default NavWrapper;
-
-// export default createAppContainer(AppNavigator);

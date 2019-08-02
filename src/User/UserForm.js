@@ -36,7 +36,7 @@ const UserForm = props => {
 					placeholder="Password"
 				/>
 			</Item>
-			<Button title={props.type} onPress={submitForm} />
+			<Button color="#665b7a" title={props.type} onPress={submitForm} />
 		</Form>
 	);
 };

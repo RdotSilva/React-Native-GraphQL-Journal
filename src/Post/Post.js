@@ -51,7 +51,8 @@ const postQuery = gql`
 const styles = StyleSheet.create({
 	container: {
 		padding: 20,
-		flex: 1
+		flex: 1,
+		backgroundColor: "#e9e7ed"
 	},
 	bodyText: {
 		fontSize: 16

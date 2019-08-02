@@ -1,12 +1,11 @@
 import React from "react";
 import { View, Text } from "react-native";
 import gql from "graphql-tag";
+import UserForm from "./UserForm";
+import { signInUser } from "../utils/loginUtils";
 
 // Apollo hooks
 import { useMutation, useApolloClient } from "@apollo/react-hooks";
-
-import UserForm from "./UserForm";
-import { signInUser } from "../utils/loginUtils";
 
 const LoginUser = props => {
 	const client = useApolloClient();

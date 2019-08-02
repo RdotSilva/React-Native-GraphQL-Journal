@@ -1,7 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
 import gql from "graphql-tag";
-import { compose } from "react-apollo";
 
 // Apollo hooks
 import { useMutation, useApolloClient } from "@apollo/react-hooks";

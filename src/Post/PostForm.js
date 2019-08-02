@@ -36,7 +36,7 @@ const PostForm = props => {
 						placeholder="Body"
 					/>
 				</Item>
-				<Button title="Save Post" onPress={submitForm} />
+				<Button color="#8d82a2" title="Save Post" onPress={submitForm} />
 			</Form>
 		</View>
 	);
@@ -44,7 +44,7 @@ const PostForm = props => {
 
 const styles = StyleSheet.create({
 	body: {
-		height: 520,
+		height: 518,
 		textAlignVertical: "top"
 	},
 	container: {

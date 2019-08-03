@@ -1,3 +1,4 @@
+// Global header styles to be used
 export default {
 	headerStyle: {
 		backgroundColor: "#373142"

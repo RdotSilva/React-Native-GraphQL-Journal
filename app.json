@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "journal",
-    "slug": "journal",
+    "name": "MyJourney",
+    "slug": "myjourney",
     "privacy": "public",
     "sdkVersion": "33.0.0",
     "platforms": [
@@ -25,6 +25,8 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "MyJourney mobile application.",
+    "githubUrl": "https://github.com/RdotSilva/React-Native-GraphQL-Journal"
   }
 }

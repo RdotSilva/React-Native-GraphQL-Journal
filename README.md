@@ -2,6 +2,8 @@
 
 MyJourney is a mobile application that allows users to create personal secure journal entries. You can use this application to keep track of progress/goals, take notes, or even write a personal blog.
 
+Live Demo Hosted using Expo: [Expo Project](https://expo.io/@rdotsilva/myjourney "Expo Project")
+
 ### Prerequisites
 
 You must first install Expo.
@@ -41,12 +43,6 @@ expo start --ios
 expo start --android
 ```
 
-## Screenshots
-
-![Register Screen](https://i.imgur.com/rkdAnr3.png "Register Screen")
-![New Post](https://i.imgur.com/YH427ig.png "New Post")
-![Show Posts](https://i.imgur.com/dfAh134.png "Show Posts")
-
 ## Built With
 
 - Expo
@@ -55,6 +51,12 @@ expo start --android
 - Apollo GraphQL (Apollo GraphQL hooks)
 - JavaScript
 - NodeJS
+
+## Screenshots
+
+![Register Screen](https://i.imgur.com/rkdAnr3.png "Register Screen")
+![New Post](https://i.imgur.com/YH427ig.png "New Post")
+![Show Posts](https://i.imgur.com/dfAh134.png "Show Posts")
 
 ## License
 
